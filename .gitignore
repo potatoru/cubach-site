@@ -1,3 +1,6 @@
 .idea
 node_modules
 *.log
+public/js/*.txt
+public/css
+public/js
