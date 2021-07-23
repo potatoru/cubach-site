@@ -1,14 +1,8 @@
 body {
-  background: url("/img/so-white.png");
-}
-
-.head {
-  background: url("/img/headbg.jpg") center center;
   background-size: cover;
-  text-shadow: 0 0 5px #000000;
+  background: url("/img/bg.jpg") center center;
 }
 
-.btn-discord {
-  background: #597ae0 !important;
-  color: #ffffff;
+mark {
+  background-color: #e3fce3;
 }
