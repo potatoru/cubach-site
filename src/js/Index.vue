@@ -3,6 +3,7 @@
   <div class="text-center rounded rounded-3 shadow bg-light px-4 pt-4 pb-3">
     <h1 class="display-6 mb-3">Добро пожаловать на Кубач!</h1>
     <p class="lead mb-3">Сервер для любителей Minecraft без лишних плагинов и доната.</p>
+
     <p class="mb-4" :class="{'text-success': online && loaded, 'text-danger': !online && loaded}">
       <template v-if="loaded">
         <template v-if="online">Сейчас на сервере {{ players }} {{ playersTxt }}.</template>
@@ -21,6 +22,12 @@
     </div>
 
     <div v-if="showStart" class="mt-4 text-start">
+      <div class="row justify-content-center mb-4">
+        <div class="col-6">
+          <img class="w-100" src="/img/billy.gif" />
+        </div>
+      </div>
+
       <h5 class="text-center">Начало игры</h5>
       <p class="mb-1">Скачать игру можно с помощью <a href="https://tlaun.ch">TLauncher</a> или купить <a href="https://minecraft.net/ru-ru/store/">купить официально</a>.</p>
       <p class="mb-1">Адрес сервера для подключения: <mark>cubach.com</mark></p>
@@ -72,7 +79,7 @@ export default {
     },
 
     update() {
-      fetch('https://mcapi.us/server/status?ip=cubach.com').then(response => response.json().then(status => {
+      fetch('https://mcapi.us/server/status?ip=play.cubach.com').then(response => response.json().then(status => {
         this.online = status.online;
         this.players = status.players.now;
         this.version = status.server.name.split(' ')[1];

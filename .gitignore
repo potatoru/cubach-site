@@ -4,3 +4,4 @@ node_modules
 public/js/*.txt
 public/css
 public/js
+serve.bat
