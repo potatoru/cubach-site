@@ -21,14 +21,14 @@
           </tr>
           <tr>
             <td class="fw-bold"><i class="bi bi-check-circle-fill text-success"/> Телепорт на место смерти</td>
-            <td class="fst-italic">&mdash; Для тех, кто часто умирает (как наш сервер).</td>
+            <td class="fst-italic">&mdash; Для тех, кто часто умирает.</td>
           </tr>
           <tr>
             <td class="fw-bold"><i class="bi bi-check-circle-fill text-success"/> Несколько точек /home</td>
             <td class="fst-italic">&mdash; Лендлорды на месте?</td>
           </tr>
           <tr>
-            <td class="fw-bold"><i class="bi bi-check-circle-fill text-success"/> RTP с большим радиусом и без кулдауна
+            <td class="fw-bold"><i class="bi bi-check-circle-fill text-success"/> RTP с большим радиусом и без задержек
             </td>
             <td class="fst-italic">&mdash; Загляните в самые глубины Кубача!</td>
           </tr>
