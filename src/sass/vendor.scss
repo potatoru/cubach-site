@@ -1,10 +1,34 @@
-$container-max-widths: (
-        sm: 540px,
-        md: 720px
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+$theme-colors: (
+        "primary":    $blue-400,
+        "secondary":  $gray-400,
+        "success":    $green-400,
+        "info":       $indigo-400,
+        "warning":    $orange-400,
+        "danger":     $red-400,
+        "light":      $light,
+        "dark":       $dark
 );
+
+$min-contrast-ratio:  2.0;
 
 @import "~bootstrap/scss/bootstrap-reboot";
 @import "~bootstrap/scss/bootstrap-grid";
 @import "~bootstrap/scss/bootstrap-utilities";
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+.bi::before {
+  margin-right: 0.5rem;
+}
+

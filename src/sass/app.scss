@@ -1,8 +1,13 @@
 body {
-  background: url("/img/bg.jpg") no-repeat center center;
+  background: url("/img/bg2.jpg") no-repeat center center;
   background-size: cover;
 }
 
 mark {
   background-color: #e3fce3;
+}
+
+.teaser {
+  text-shadow: 0 0 .2rem rgba(33,29,45,.8);
+  color: white;
 }

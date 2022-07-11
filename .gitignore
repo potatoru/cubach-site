@@ -3,5 +3,6 @@ node_modules
 *.log
 public/js/*.txt
 public/css
+public/fonts
 public/js
 serve.bat

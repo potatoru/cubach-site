@@ -1,6 +1,12 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router';
+import router from './router';
 
-window.Vue = Vue;
+Vue.router = router;
+Vue.use(VueRouter);
 
-Vue.component('app', require('./Index').default);
-new Vue({}).$mount('#app');
+Vue.component('app', require('./pages/App').default);
+
+window.Vue = new Vue({
+  router
+}).$mount('#app');
