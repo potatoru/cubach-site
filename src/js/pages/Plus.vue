@@ -123,7 +123,7 @@
 
         <div class="row">
           <div class="col-sm-3"/>
-          <div class="col-sm-6">
+          <div class="col-sm-5">
             <button class="btn btn-success mb-2" @click="confirm" :disabled="sending">{{
                 sending
                     ? 'Делаем магию...'
