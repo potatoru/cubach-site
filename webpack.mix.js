@@ -12,6 +12,6 @@ mix.sass('src/sass/vendor.scss', 'public/css/vendor.css').version();
 mix.sass('src/sass/app.scss', 'public/css/app.css').version();
 
 mix.js('src/js/app.js', 'js').extract([
-    'vue', 'vuex'
+    'vue', 'vue-router'
 ]).vue()
 
