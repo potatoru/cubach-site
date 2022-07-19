@@ -73,10 +73,10 @@ export default {
     },
 
     update() {
-      fetch('https://mcapi.us/server/status?ip=play.cubach.com').then(response => response.json().then(status => {
+      fetch('https://api.mcsrvstat.us/2/play.cubach.com').then(response => response.json().then(status => {
         this.online = status.online;
-        this.players = status.players.now;
-        this.version = status.server.name.split(' ')[1];
+        this.players = status.players.online;
+        this.version = status.version.split(' ')[1];
       })).catch(err => {
         this.online = false;
         this.version = '';
