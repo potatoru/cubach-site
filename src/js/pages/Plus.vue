@@ -57,7 +57,7 @@
         <div class="col">
           <div class="card mb-2 shadow-sm border-0" @mouseenter="gif = 1" @mouseleave="gif = 0">
             <img src="/img/monke.jpg" class="card-img-top" alt="...">
-            <img src="/img/monke.webp" class="card-img-top position-absolute" :class="{'visually-hidden': gif !== 1 }" alt="...">
+            <img src="/img/monke.webp" class="card-img-top position-absolute" v-if="gif === 1" alt="...">
             <div class="card-body text-center">
               <h5 class="card-title">1 месяц</h5>
               <p class="card-text">Я новенький</p>
@@ -72,7 +72,7 @@
           <div class="card mb-2 shadow-sm border-0" @mouseenter="gif = 2" @mouseleave="gif = 0">
             <!--            <div class="badge bg-success position-absolute top-100 start-50 translate-middle">Скидка!</div>-->
             <img src="/img/axo.jpg" class="card-img-top" alt="...">
-            <img src="/img/axo.webp" class="card-img-top position-absolute" :class="{'visually-hidden': gif !== 2 }" alt="...">
+            <img src="/img/axo.webp" class="card-img-top position-absolute" v-if="gif === 2" alt="...">
             <div class="card-body text-center">
               <h5 class="card-title">3 месяца</h5>
               <p class="card-text">Я уже смешарик</p>
@@ -85,7 +85,7 @@
           <div class="card mb-2 shadow-sm border-0" @mouseenter="gif = 3" @mouseleave="gif = 0">
             <!--            <span class="badge bg-success position-absolute top-100 start-50 translate-middle">Здесь тоже!</span>-->
             <img src="/img/billy.jpg" class="card-img-top" alt="...">
-            <img src="/img/billy.webp" class="card-img-top position-absolute" :class="{'visually-hidden': gif !== 3 }" alt="...">
+            <img src="/img/billy.webp" class="card-img-top position-absolute" v-if="gif === 3" alt="...">
             <div class="card-body text-center">
               <h5 class="card-title">6 месяцев</h5>
               <p class="card-text">DEEP ♂ DARK ♂ FANTASIES</p>
