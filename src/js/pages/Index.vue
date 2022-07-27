@@ -9,7 +9,7 @@
 
   <div class="row justify-content-center mb-5">
     <div class="col-auto mb-2">
-      <a class="btn btn-primary" href="https://help.cubach.com"><i class="bi bi-book"/>О сервере</a>
+      <a class="btn btn-primary" href="https://help.cubach.com"><i class="bi bi-book"/>Помощь</a>
     </div>
     <div class="col-auto mb-2">
       <a class="btn btn-dark" href="https://map.cubach.com" target="_blank"><i class="bi bi-compass"/>Карта мира</a>
@@ -23,21 +23,23 @@
   </div>
 
 
-  <div class="small col-4 mx-auto text-center shadow-lg p-3 bg-black bg-opacity-50 rounded-4 text-white" >
-    <template v-if="loaded">
-      <template v-if="online">
-        <div class="row justify-content-between">
-          <div class="col-auto"><h6> <span class="badge bg-success">Online</span></h6></div>
-          <div class="col-auto">{{ players }} {{ playersTxt }}</div>
-        </div>
-        <div class="row justify-content-between">
-          <div class="col-auto">Сервер v. {{ version }}</div>
-          <div class="col-auto">play.cubach.com</div>
-        </div>
+  <div class="row">
+    <div class="small col-auto mx-auto text-center shadow-lg p-3 bg-black bg-opacity-50 rounded-4 text-white" >
+      <template v-if="loaded">
+        <template v-if="online">
+          <div class="row justify-content-between">
+            <div class="col-auto"><h6> <span class="badge bg-success">Online</span></h6></div>
+            <div class="col-auto">{{ players }} {{ playersTxt }}</div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-auto">Сервер v. {{ version }}</div>
+            <div class="col-auto">play.cubach.com</div>
+          </div>
+        </template>
+        <template v-else><span class="text-danger">Сервер временно отключён на техработы</span></template>
       </template>
-      <template v-else><span class="text-danger">Сервер временно отключён на техработы</span></template>
-    </template>
-    <template v-else>Устанавливаем связь с сервером...</template>
+      <template v-else>Устанавливаем связь с сервером...</template>
+    </div>
   </div>
 
 </div>
