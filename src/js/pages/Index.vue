@@ -20,7 +20,7 @@
           <a class="btn btn-info" href="/discord" target="_blank"><i class="bi bi-discord me-1"/>Сервер Discord</a>
         </div>
         <div class="col-auto mb-2">
-          <a class="btn btn-warning" href="/donate"><i class="bi bi-currency-dollar me-1"/>Поддержать проект</a>
+          <a class="btn btn-warning" href="/shop"><i class="bi bi-currency-dollar me-1"/>Кубач.Шоп</a>
         </div>
       </div>
 

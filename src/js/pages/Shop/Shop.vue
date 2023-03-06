@@ -6,7 +6,7 @@
 
   <router-view />
 
-  <div class="mt-4 text-center white-and-shadow">
+  <div class="mt-4 text-center white-and-shadow pb-4">
     <h4 class="h6">Возникли вопросы по работе магазина? Вы можете задать их в нашем
       <a href="/discord" class="text-white" target="_blank">Discord</a> или <a href="/" class="text-white">вернуться
         на главную</a>.</h4>
