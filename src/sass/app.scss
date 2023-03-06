@@ -1,13 +1,17 @@
 body {
-  background: url("/img/bg2.jpg") no-repeat center center;
   background-size: cover;
+  background: url("/img/bg2.jpg") no-repeat fixed center center;
 }
 
 mark {
   background-color: #e3fce3;
 }
 
-.teaser {
-  text-shadow: 0 0 .2rem rgba(33,29,45,.8);
+.white-and-shadow {
+  text-shadow: 0 0 .3rem rgba(33, 29, 45, .9);
   color: white;
+}
+
+textarea {
+  resize: none;
 }

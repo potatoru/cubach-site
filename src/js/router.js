@@ -1,23 +1,40 @@
-import VueRouter from 'vue-router';
-import Index from './pages/Index';
-import Plus from './pages/Plus';
+import { createRouter, createWebHistory } from 'vue-router'
+import Index from './pages/Index'
+import Shop from './pages/Shop/Shop.vue'
+import ShopIndex from './pages/Shop/ShopIndex.vue'
+import ShopRules from './pages/Shop/ShopRules.vue'
 
 const routes = [
   {
     path: '/plus',
-    name: 'plus',
-    component: Plus,
+    redirect: '/shop',
   },
   {
-    path: '*',
+    path: '/donate',
+    redirect: '/shop',
+  },
+  {
+    path: '/shop',
+    component: Shop,
+    children: [
+      { path: '', component: ShopIndex, meta: { title: 'Кубач.Шоп' } },
+      { path: 'rules', component: ShopRules }
+    ]
+  },
+  {
+    path: '/shop/rules',
+    name: 'shop_rules',
+    component: ShopRules,
+    meta: { title: 'Правила покупки - Кубач.Шоп' },
+  },
+  {
+    path: '',
     component: Index,
   },
-];
+]
 
-const router = new VueRouter({
-  history: true,
+export const router = createRouter({
+  history: createWebHistory(),
   mode: 'history',
   routes,
-});
-
-export default router;
+})

@@ -1,12 +1,21 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import router from './router';
+import { createApp, h } from 'vue'
+import { router } from './router'
 
-Vue.router = router;
-Vue.use(VueRouter);
+import App from './pages/App.vue'
+import ShopModal from './components/ShopModal.vue'
 
-Vue.component('app', require('./pages/App').default);
+const app = createApp({
+  render: () => h(App),
+})
 
-window.Vue = new Vue({
-  router
-}).$mount('#app');
+const DEFAULT_TITLE = "Кубач Minecraft";
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || DEFAULT_TITLE;
+  next();
+});
+
+app.use(router)
+
+app.component('app', App)
+app.component('shop-modal', ShopModal)
+app.mount('#app')

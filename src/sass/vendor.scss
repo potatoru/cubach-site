@@ -12,19 +12,28 @@ $theme-colors: (
 );
 
 $min-contrast-ratio:  2.0;
+$modal-md:                          400px;
+
 
 @import "~bootstrap/scss/bootstrap-grid";
 @import "~bootstrap/scss/bootstrap-utilities";
 @import "~bootstrap/scss/type";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/dropdown";
 @import "~bootstrap/scss/badge";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/modal";
 @import "~bootstrap-icons/font/bootstrap-icons";
 
-.bi::before {
-  margin-right: 0.5rem;
+.bi.mr::before {
+  margin-right: 0.25rem;
 }
 
