@@ -62,10 +62,10 @@ function declOfNum (number, titles) {
 }
 
 function update () {
-  fetch('https://api.mcsrvstat.us/2/play.cubach.com').then(response => response.json()).then(status => {
-    online.value = status.online
-    players.value = status.players.online
-    version.value = status.version.split(' ')[1]
+  fetch('https://mcapi.us/server/status?ip=cubach.com').then(response => response.json()).then(s => {
+    online.value = s.online
+    players.value = s.players.now
+    version.value = s.server.name.split(' ')[1]
   }).catch(err => {
     online.value = false
     version.value = ''
