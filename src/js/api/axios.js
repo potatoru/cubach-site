@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = "http://127.0.0.1:8000/api"
+const baseURL = "https://shop.cubach.com/api"
 const instance = axios.create({ baseURL })
 
 export default instance
