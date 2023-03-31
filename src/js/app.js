@@ -1,8 +1,8 @@
 import { createApp, h } from 'vue'
-import { router } from './router'
+import { router } from '@app/js/router'
 
-import App from './pages/App.vue'
-import ShopModal from './components/ShopModal.vue'
+import App from '@app/js/pages/App.vue'
+import ShopModal from '@app/js/components/ShopModal.vue'
 
 const app = createApp({
   render: () => h(App),

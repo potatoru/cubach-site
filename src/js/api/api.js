@@ -1,4 +1,4 @@
-import Repository from './axios';
+import Repository from '@app/js/api/axios';
 
 /**
  * Shop
