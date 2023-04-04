@@ -25,7 +25,7 @@ export default ({ mode }) => {
       rollupOptions: {
         input: '/index.html'
       },
-      // target: 'es2015',
+      target: 'es2015',
       assetsInlineLimit: 4096,
       minify: true,
     },
