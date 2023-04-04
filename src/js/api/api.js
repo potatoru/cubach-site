@@ -5,6 +5,6 @@ import Repository from '@app/js/api/axios';
  */
 export const shop = {
   get: () => Repository.get('/shop'),
-  getItem: (itemId) => Repository.get('/items/' + itemId),
-  order: (order) => Repository.post('/order', order)
+  getItem: (itemId) => Repository.get('/shop/items/' + itemId),
+  order: (order) => Repository.post('/shop/order', order)
 };
