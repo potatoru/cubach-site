@@ -62,7 +62,7 @@ function declOfNum (number, titles) {
 }
 
 function update () {
-  fetch('https://api.mcsrvstat.us/2/cubach.com').then(response => response.json()).then(s => {
+  fetch('https://api.mcstatus.io/v2/status/java/cubach.com').then(response => response.json()).then(s => {
     online.value = s.online
     players.value = s.players.online
     version.value =  '1.19.4' //s.server.name.split(' - ')[1]
