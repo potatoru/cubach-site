@@ -11,7 +11,8 @@ $theme-colors: (
         "dark":       $dark
 );
 
-$min-contrast-ratio:  2.0;
+$min-contrast-ratio:  1.85;
+
 $modal-md: 400px;
 
 @import "bootstrap/scss/bootstrap-grid";

@@ -62,10 +62,10 @@ function declOfNum (number, titles) {
 }
 
 function update () {
-  fetch('https://api.mcstatus.io/v2/status/java/cubach.com').then(response => response.json()).then(s => {
-    online.value = s.online
+  fetch('https://api.minetools.eu/ping/mc.cubach.com/25565').then(r => r.json()).then(s => {
+    online.value = true
     players.value = s.players.online
-    version.value =  '1.19.4' //s.server.name.split(' - ')[1]
+    version.value =  '1.20.1' //s.server.name.split(' - ')[1]
   }).catch(err => {
     online.value = false
     version.value = ''
