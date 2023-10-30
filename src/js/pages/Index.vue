@@ -51,7 +51,6 @@ import { computed, onMounted, ref } from 'vue'
 
 const online = ref(false)
 const loaded = ref(false)
-const version = ref('')
 const players = ref(0)
 const playersTxt = computed(() => declOfNum(players, ['игрок', 'игрока', 'игроков']))
 
@@ -65,10 +64,8 @@ function update () {
   fetch('https://api.minetools.eu/ping/mc.cubach.com/25565').then(r => r.json()).then(s => {
     online.value = true
     players.value = s.players.online
-    version.value =  '1.20.1' //s.server.name.split(' - ')[1]
   }).catch(err => {
     online.value = false
-    version.value = ''
   }).finally(() => {
     loaded.value = true
     setTimeout(update, 3 * 60 * 1000)
