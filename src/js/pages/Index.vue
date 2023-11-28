@@ -10,7 +10,7 @@
 
       <div class="row justify-content-center mb-3">
         <div class="col-auto mb-2">
-          <a class="btn btn-primary" href="https://help.cubach.com"><i class="bi bi-book me-1"/>Помощь</a>
+          <a class="btn btn-primary" href="https://wiki.cubach.com"><i class="bi bi-book me-1"/>Кубач.Wiki</a>
         </div>
         <div class="col-auto mb-2">
           <a class="btn btn-dark" href="https://map.cubach.com" target="_blank"><i class="bi bi-compass me-1"/>Карта
