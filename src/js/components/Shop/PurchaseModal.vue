@@ -10,8 +10,10 @@
           <div class="text-center">
             <img :src="item.image" class="w-75 rounded-3" alt="..." @mouseenter="hovered = true"
                  :class="{'visually-hidden': hovered && item.image2}"/>
-            <img :src="item.image2" class="w-75 rounded-3" alt="..." @mouseleave="hovered = false"
+
+              <img v-if="item.image2" :src="item.image2" class="w-75 rounded-3" alt="..." @mouseleave="hovered = false"
                  :class="{'visually-hidden': !hovered && item.image2}"/>
+
           </div>
 
           <h4 class="fw-light text-center mb-2 pt-3" v-html="item.name"/>

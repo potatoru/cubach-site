@@ -68,7 +68,6 @@
 <script setup>
 import { nextTick, onMounted, ref } from 'vue'
 import { shop } from '@app/js/api/api'
-import { Dropdown } from 'bootstrap'
 import { useRoute } from 'vue-router'
 import ShopItemPromo from '@app/js/components/Shop/ShopItemPromo.vue'
 
@@ -79,14 +78,10 @@ const rules = ref('rules')
 // Vars
 const loading = ref(true)
 const stock = ref([])
-const dropdown = ref('dropdown')
 const hovered = ref(0)
 
 function loaded () {
   loading.value = false
-  nextTick(() => {
-    new Dropdown(dropdown.value)
-  })
 }
 
 function select (item) {
