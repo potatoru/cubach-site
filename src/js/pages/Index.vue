@@ -4,7 +4,7 @@
     <div class="col p-3">
       <div class="text-center white-and-shadow mb-4">
         <h1 class="display-6 fw-bold">Добро пожаловать на Кубач!</h1>
-        <h2 class="h4">10 лет пытаемся создать уютненький сервер Minecraft</h2>
+        <h2 class="h4">11 лет пытаемся создать уютненький сервер Minecraft</h2>
         <p class="mb-0">Пока не получилось, но вы всё равно заходите...</p>
       </div>
 
