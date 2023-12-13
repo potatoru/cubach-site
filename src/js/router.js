@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Index from '@app/js/pages/Index.vue'
 import Shop from '@app/js/pages/Shop/Shop.vue'
 import ShopIndex from '@app/js/pages/Shop/ShopIndex.vue'
-import ShopRules from '@app/js/pages/Shop/ShopRules.vue'
 import ShopResult from '@app/js/pages/Shop/ShopResult.vue'
 
 const routes = [
@@ -19,15 +18,9 @@ const routes = [
     component: Shop,
     children: [
       { path: '', component: ShopIndex, meta: { title: 'Кубач.Шоп' } },
-      { path: 'rules', component: ShopRules },
-      { path: 'back', component: ShopResult }
-    ]
-  },
-  {
-    path: '/shop/rules',
-    name: 'shop_rules',
-    component: ShopRules,
-    meta: { title: 'Правила покупки - Кубач.Шоп' },
+      { path: 'rules', component: ShopIndex },
+      { path: 'back', component: ShopResult },
+    ],
   },
   {
     path: '',

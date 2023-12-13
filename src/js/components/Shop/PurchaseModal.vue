@@ -14,10 +14,9 @@
                  :class="{'visually-hidden': !hovered && item.image2}"/>
           </div>
 
-          <h4 class="fw-light text-center mb-0 pt-3 pb-2" v-html="item.name"/>
-          <p class="mb-3 text-center" v-html="item.subtitle"/>
+          <h4 class="fw-light text-center mb-2 pt-3" v-html="item.name"/>
 
-          <p class="mb-0 font-monospace bg-info bg-opacity-10 p-1 text-center" v-if="item.description"
+          <p class="mb-0 font-monospace  text-center" v-if="item.description"
              v-html="item.description"/>
 
           <hr class="text-light"/>
@@ -55,7 +54,7 @@
 <script setup>
 import { nextTick, onMounted, ref } from 'vue'
 import { Modal } from 'bootstrap'
-import { shop } from '../api/api'
+import { shop } from '../../api/api'
 
 const item = ref({})
 const hovered = ref({})
