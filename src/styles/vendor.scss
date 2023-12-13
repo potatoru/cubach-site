@@ -1,5 +1,7 @@
 @import "bootstrap/scss/bootstrap-reboot";
 
+$font-family-sans-serif: 'Nunito', sans-serif;
+
 $theme-colors: (
         "primary":    $blue-400,
         "secondary":  $gray-400,
@@ -28,6 +30,8 @@ $modal-md: 400px;
 @import "bootstrap/scss/spinners";
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/transitions";
 @import "bootstrap/scss/helpers";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/modal";
