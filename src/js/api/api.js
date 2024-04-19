@@ -8,3 +8,7 @@ export const shop = {
   getItem: (itemId) => Repository.get('/shop/items/' + itemId),
   order: (order) => Repository.post('/shop/orders', order)
 };
+
+export const banlist = {
+  get: (page) => Repository.get(`/banlist/${page}`),
+}

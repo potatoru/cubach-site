@@ -3,6 +3,7 @@ import Index from '@app/js/pages/Index.vue'
 import Shop from '@app/js/pages/Shop/Shop.vue'
 import ShopIndex from '@app/js/pages/Shop/ShopIndex.vue'
 import ShopResult from '@app/js/pages/Shop/ShopResult.vue'
+import Banlist from '@app/js/pages/Banlist.vue'
 
 const routes = [
   {
@@ -23,7 +24,16 @@ const routes = [
     ],
   },
   {
-    path: '',
+    path: '/banlist',
+    component: Banlist
+  },
+  {
+    path: '/',
+    component: Index,
+  },
+
+  {
+    path: '/:pathMatch(.*)*',
     component: Index,
   },
 ]
