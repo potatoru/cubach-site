@@ -21,6 +21,7 @@ $modal-md: 400px;
 @import "bootstrap/scss/bootstrap-utilities";
 @import "bootstrap/scss/type";
 @import "bootstrap/scss/buttons";
+@import "bootstrap/scss/button-group";
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/badge";
 @import "bootstrap/scss/tables";
@@ -35,6 +36,8 @@ $modal-md: 400px;
 @import "bootstrap/scss/helpers";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/modal";
+@import "bootstrap/scss/tooltip";
+
 
 $bootstrap-icons-font-dir: "@app/public/fonts/bootstrap-icons";
 @import "bootstrap-icons/font/bootstrap-icons";

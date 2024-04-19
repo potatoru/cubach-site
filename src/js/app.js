@@ -6,6 +6,7 @@ import PurchaseModal from '@app/js/components/Shop/PurchaseModal.vue'
 import RulesModal from '@app/js/components/Shop/RulesModal.vue'
 import ShopItem from '@app/js/components/Shop/ShopItem.vue'
 import ShopItemPromo from '@app/js/components/Shop/ShopItemPromo.vue'
+import Status from '@app/js/components/Status.vue'
 
 const app = createApp({
   render: () => h(App),
@@ -20,6 +21,7 @@ router.beforeEach((to, from, next) => {
 app.use(router)
 
 app.component('app', App)
+app.component('status', Status)
 app.component('purchase-modal', PurchaseModal)
 app.component('rules-modal', RulesModal)
 app.component('shop-item', ShopItem)

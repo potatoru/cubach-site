@@ -33,3 +33,49 @@ mark {
 textarea {
   resize: none;
 }
+
+.menu-links {
+  .nav-link.active, .nav-link:hover {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 3rem;
+      border-bottom: 2px #ffffff solid;
+      display: block;
+      bottom: 0.75rem;
+    }
+  }
+}
+
+.status-dot {
+  margin-bottom: 3px;
+  height: 12px;
+  width: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.online {
+    background-color: #6fe361;
+    box-shadow: #51b646 0 0 4px;
+  }
+
+  &.offline {
+     background-color: #e36161;
+     box-shadow: #b64646 0 0 4px;
+   }
+}
+
+@media (max-width: 575.98px) {
+  .menu-links {
+    .nav-link.active, .nav-link:hover {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

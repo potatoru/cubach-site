@@ -1,78 +1,67 @@
 <template>
+  <div class="white-and-shadow text-center mb-4">
+    <h1 class="h2 fw-bold">Добро пожаловать на Кубач!</h1>
+    <h2 class="lead">Сервер выживания в Minecraft с дополнительными плюшками и дружественной атмосферой.</h2>
+  </div>
 
-  <div class="row min-vh-100 no-gutters align-items-center">
-    <div class="col p-3">
-      <div class="text-center white-and-shadow mb-4">
-        <h1 class="display-6 fw-bold">Добро пожаловать на Кубач!</h1>
-        <h2 class="h4">11 лет пытаемся создать уютненький сервер Minecraft</h2>
-        <p class="mb-0">Пока не получилось, но вы всё равно заходите...</p>
+  <div class="p-4 bg-dark bg-opacity-75 rounded-3 white-and-shadow">
+    <div class="row mb-4">
+      <div class="col-2 mb-2 mb-sm-0 align-self-center">
+        <img src="/img/icons/bee.png" class="img-fluid" />
       </div>
-
-      <div class="row justify-content-center mb-3">
-        <div class="col-auto mb-2">
-          <a class="btn btn-primary" href="https://wiki.cubach.com"><i class="bi bi-book me-1"/>Кубач.Wiki</a>
-        </div>
-        <div class="col-auto mb-2">
-          <a class="btn btn-dark" href="https://map.cubach.com" target="_blank"><i class="bi bi-compass me-1"/>Карта
-            мира</a>
-        </div>
-        <div class="col-auto mb-2">
-          <a class="btn btn-info" href="/discord" target="_blank"><i class="bi bi-discord me-1"/>Сервер Discord</a>
-        </div>
-        <div class="col-auto mb-2">
-          <a class="btn btn-warning" href="/shop"><i class="bi bi-currency-dollar me-1"/>Кубач.Шоп</a>
-        </div>
+      <div class="col-sm col-12">
+        <h4>О сервере</h4>
+        <p class="mb-0">Приветствуем вас на Кубаче! Наш сервер существует с 2012 года как некоммерческий проект, созданный ради веселья и общения.</p>
       </div>
+    </div>
 
+    <div class="row mb-4">
+      <div class="col-2 mb-2 mb-sm-0 align-self-center">
+        <img src="/img/icons/wtf.png" class="img-fluid" />
+      </div>
+      <div class="col-sm col-12">
+        <h4>Возможности</h4>
+        <p class="mb-0">Защита территории приватом, экономика, работа и магазины, кланы,  кастомные вещи с уникальным крафтом, мобы и боссы и многое другое! Со всеми возможностями вы можете ознакомиться на <a href="https://wiki.cubach.com/" class="text-white" target="_blank">нашей Вики</a>.</p>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-2 mb-2 mb-sm-0 align-self-center">
+        <img src="/img/icons/cat.png" class="img-fluid" />
+      </div>
+      <div class="col-sm col-12">
+        <h4>Дружественная атмосфера</h4>
+        <p class="mb-0">На нашем сервере царит дружественная атмосфера, где каждый игрок может найти новых друзей и насладиться общением без оскорблений, срачиков и политки. У нас отзывчивая администрация и классные игроки всех возрастов!</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 mb-2 mb-sm-0 align-self-center">
+        <img src="/img/icons/pc.png" class="img-fluid" />
+      </div>
+      <div class="col-sm col-12">
+        <h4>Стабильная работа</h4>
+        <p class="mb-0">Наш сервер работает на выделенном оборудовании, что обеспечивает стабильную работу 24/7 и высокую производительность для комфортной игры.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-3"/>
+
+  <div class="white-and-shadow text-center mb-4 mb-lg-0">
+    <p class="h3 fw-bold">Всё ещё здесь?</p>
+    <p class="lead">Тогда скорее заходи на наш сервер!</p>
+  </div>
+
+  <div class="row mb-5">
+    <div class="mx-auto col-6 text-center shadow-lg px-3 py-2 bg-black bg-opacity-50 rounded-4 text-white lead">
       <div class="row">
-        <div class="small col-auto mx-auto text-center shadow-lg p-3 bg-black bg-opacity-50 rounded-4 text-white">
-          <template v-if="loaded">
-            <template v-if="online">
-              <div class="row justify-content-between">
-                <div class="col-auto"><h6><span class="badge bg-success">Online</span></h6></div>
-                <div class="col-auto">{{ players }} {{ playersTxt }}</div>
-              </div>
-              <div class="row justify-content-between">
-                <div class="col-auto">IP сервера</div>
-                <div class="col-auto">cubach.com</div>
-              </div>
-            </template>
-            <template v-else><span class="text-danger">Сервер временно отключён на техработы</span></template>
-          </template>
-          <template v-else>Устанавливаем связь с сервером...</template>
-        </div>
+        <div class="col">IP сервера</div>
+        <div class="col font-monospace">cubach.com</div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import { computed, onMounted, ref } from 'vue'
-
-const online = ref(false)
-const loaded = ref(false)
-const players = ref(0)
-const playersTxt = computed(() => declOfNum(players, ['игрок', 'игрока', 'игроков']))
-
-// https://gist.github.com/realmyst/1262561
-function declOfNum (number, titles) {
-  const cases = [2, 0, 1, 1, 1, 2]
-  return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]]
-}
-
-function update () {
-  fetch('https://api.minetools.eu/ping/mc.cubach.com/25565').then(r => r.json()).then(s => {
-    online.value = true
-    players.value = s.players.online
-  }).catch(err => {
-    online.value = false
-  }).finally(() => {
-    loaded.value = true
-    setTimeout(update, 3 * 60 * 1000)
-  })
-}
-
-onMounted(() => {
-  update()
-})
+<script setup lang="ts">
 </script>

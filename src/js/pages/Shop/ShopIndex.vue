@@ -9,8 +9,9 @@
   </div>
 
   <template v-else>
-    <div class="mb-4">
-      <button class="btn btn-primary" @click="openRules()">Правила покупки</button>
+    <div class="d-flex mb-3 align-items-center">
+      <h2 class="white-and-shadow mb-0">Кубач.Шоп</h2>
+      <button class="ms-auto btn btn-primary" @click="openRules()">Правила покупки</button>
     </div>
 
     <template v-for="category in stock" :key="category.id">
