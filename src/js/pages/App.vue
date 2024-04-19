@@ -1,11 +1,11 @@
 <template>
   <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow p-0 mb-5">
-    <div class="container col-xxl-5 justify-content-start">
-      <a class="navbar-brand fw-bold text-white h3 mb-0 text-uppercase py-3 text-decoration-none me-2" href="/">Кубач</a>
+    <div class="container col-xxl-5">
+      <a class="navbar-brand fw-bold text-white h3 mb-0 text-uppercase py-3 text-decoration-none me-0 me-sm-2" href="/">Кубач</a>
 
       <status />
 
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
 

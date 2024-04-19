@@ -1,8 +1,10 @@
 <template>
-  <div class="white-and-shadow text-center mb-4">
+  <div class="white-and-shadow text-center">
     <h1 class="h2 fw-bold">Добро пожаловать на Кубач!</h1>
     <h2 class="lead">Сервер выживания в Minecraft с дополнительными плюшками и дружественной атмосферой.</h2>
   </div>
+
+  <div class="py-3" />
 
   <div class="p-4 bg-dark bg-opacity-75 rounded-3 white-and-shadow">
     <div class="row mb-4">
@@ -46,7 +48,7 @@
     </div>
   </div>
 
-  <div class="py-3"/>
+  <div class="py-3" />
 
   <div class="white-and-shadow text-center mb-4 mb-lg-0">
     <p class="h3 fw-bold">Всё ещё здесь?</p>
