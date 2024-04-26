@@ -31,7 +31,6 @@ const routes = [
     path: '/',
     component: Index,
   },
-
   {
     path: '/:pathMatch(.*)*',
     component: Index,

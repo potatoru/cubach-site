@@ -74,11 +74,15 @@ function show (showItem) {
 
 function purchase () {
   sending.value = true
-  let items = {}
-  items[item.value.id] = 1
+  let items = [
+    {
+      id: item.value.id,
+      a: 1
+    }
+  ]
 
   shop.order({
-    player_name: player.value,
+    player: player.value,
     items,
   }).then(res => {
     window.location.href = res.data.link
