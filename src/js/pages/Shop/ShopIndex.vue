@@ -116,7 +116,6 @@ function openRules () {
 
 function openCart () {
   cart.value.show()
-  t.show()
 }
 
 onMounted(() => {
