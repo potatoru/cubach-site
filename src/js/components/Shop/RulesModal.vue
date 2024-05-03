@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content bg-dark text-white">
         <div class="modal-header border-0 pb-1">
-          <h1 class="modal-title fs-5 mx-auto">Правила покупки</h1>
+          <h1 class="modal-title fs-4 mx-auto">Правила покупки</h1>
         </div>
 
         <div class="modal-body">

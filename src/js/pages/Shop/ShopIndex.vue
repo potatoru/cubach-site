@@ -1,6 +1,15 @@
 <template>
-  <purchase-modal ref="modal"/>
+  <item-modal ref="modal" @added="t.show()"/>
   <rules-modal ref="rules"/>
+  <cart-modal ref="cart"/>
+
+  <div class="toast-container top-0 start-50 translate-middle-x">
+    <div class="toast text-bg-success mt-5" role="alert" ref="toast">
+      <div class="toast-body">
+        Товар добавлен в корзину!
+      </div>
+    </div>
+  </div>
 
   <div class="d-flex justify-content-center" v-if="loading">
     <div class="spinner-border text-light" role="status">
@@ -11,7 +20,10 @@
   <template v-else>
     <div class="d-flex mb-3 align-items-center">
       <h2 class="white-and-shadow mb-0">Кубач.Шоп</h2>
-      <button class="ms-auto btn btn-primary" @click="openRules()">Правила покупки</button>
+      <button class="ms-auto btn btn-dark" @click="openRules()">Правила покупки</button>
+      <button class="ms-3 btn" @click="openCart()" :class="{'btn-primary': cartStore.count > 0, 'btn-dark': cartStore.count <= 0}">
+        <i class="bi bi-cart4 me-1" /> Корзина<span class="badge text-bg-light ms-2" v-if="cartStore.count > 0" v-html="cartStore.count" />
+      </button>
     </div>
 
     <template v-for="category in stock" :key="category.id">
@@ -71,10 +83,18 @@ import { nextTick, onMounted, ref } from 'vue'
 import { shop } from '@app/js/api/api'
 import { useRoute } from 'vue-router'
 import ShopItemPromo from '@app/js/components/Shop/ShopItemPromo.vue'
+import { useCartStore } from '@app/js/stores/cart.js'
+import { Toast } from 'bootstrap'
+
+const cartStore = useCartStore()
 
 // Modals
-const modal = ref('modal')
-const rules = ref('rules')
+const modal = ref()
+const rules = ref()
+const cart = ref(null)
+const toast = ref()
+
+let t = {}
 
 // Vars
 const loading = ref(true)
@@ -93,6 +113,11 @@ function openRules () {
   rules.value.show()
 }
 
+function openCart () {
+  cart.value.show()
+  t.show()
+}
+
 onMounted(() => {
   const route = useRoute()
   if (route.path === '/shop/rules') {
@@ -100,6 +125,12 @@ onMounted(() => {
       rules.value.show()
     })
   }
+
+  t = new Toast(toast.value, {
+    autohide: true,
+    animation: true,
+    delay: 3000
+  })
 
   shop.get().then(result => {
     stock.value = result.data

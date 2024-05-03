@@ -11,7 +11,7 @@ export default ({ mode }) => {
     plugins: [
       vue(),
       // getSplitVendorChunkPlugin(process.env),
-      // getLegacyPlugin(process.env)
+      //getLegacyPlugin(process.env)
     ],
 
     root: 'src/',
