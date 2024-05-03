@@ -18,9 +18,10 @@
   </div>
 
   <template v-else>
-    <div class="d-flex mb-3 align-items-center">
-      <h2 class="white-and-shadow mb-0">Кубач.Шоп</h2>
-      <button class="ms-auto btn btn-dark" @click="openRules()">Правила покупки</button>
+    <h2 class="white-and-shadow mb-0 d-sm-none d-block text-center mb-4">Кубач.Шоп</h2>
+    <div class="d-flex mb-3 align-items-center justify-content-center">
+      <h2 class="white-and-shadow mb-0 d-none d-sm-block">Кубач.Шоп</h2>
+      <button class="ms-sm-auto ms-0 btn btn-dark" @click="openRules()">Правила покупки</button>
       <button class="ms-3 btn" @click="openCart()" :class="{'btn-primary': cartStore.count > 0, 'btn-dark': cartStore.count <= 0}">
         <i class="bi bi-cart4 me-1" /> Корзина<span class="badge text-bg-light ms-2" v-if="cartStore.count > 0" v-html="cartStore.count" />
       </button>
