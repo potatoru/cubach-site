@@ -21,7 +21,7 @@ export const useCartStore = defineStore('appearanceStore', {
 
   actions: {
     append(item, amount) {
-      if (this.items.hasOwnProperty(item.id)) {
+      if (Object.prototype.hasOwnProperty.call(this.items, item.id)) {
         if (amount < 0 && this.items[item.id]['amount'] === 1) {
           delete this.items[item.id]
         } else {

@@ -43,7 +43,7 @@ onMounted(() => {
   })
 })
 
-function show (showItem) {
+function show () {
   modalBs.show()
 }
 

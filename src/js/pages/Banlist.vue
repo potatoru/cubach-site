@@ -13,12 +13,12 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="ban in list">
-        <td class="align-middle text-center" v-html="fmt(ban.date)"/>
-        <td class="align-middle text-center" v-html="ban.victim"/>
-        <td class="align-middle" v-html="ban.reason"/>
-        <td class="align-middle text-center" v-html="ban.operator"/>
-        <td class="align-middle text-center" v-html="fmt(ban.date_to)"/>
+      <tr v-for="ban in list" :key="ban.id">
+        <td class="align-middle text-center">{{ fmt(ban.date) }}</td>
+        <td class="align-middle text-center">{{ ban.victim }}</td>
+        <td class="align-middle">{{ ban.reason }}</td>
+        <td class="align-middle text-center">{{ ban.operator }}</td>
+        <td class="align-middle text-center">{{ fmt(ban.date_to) }}</td>
       </tr>
       </tbody>
     </table>
@@ -52,7 +52,7 @@ function fmt (time) {
   }
 
   const date = new Date(time * 1000)
-  return date.toLocaleString('ru-RU').replace(',', '<br>')
+  return date.toLocaleString('ru-RU').replace(',', '\n')
 }
 
 function next (d) {
