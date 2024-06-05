@@ -36,11 +36,32 @@
                 <div class="ms-auto">{{cart.total}}₽</div>
               </div>
 
+              <div class="row gx-2">
+                <div class="col">
+                  <div class="form-floating mb-3">
+                    <input id="playerName" type="text"
+                           class="form-control bg-light bg-opacity-10 text-white shadow-none border-dark"
+                           placeholder="Ваш ник" v-model="player">
+                    <label for="playerName">Ваш ник</label>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="form-floating mb-3">
+                    <input id="coupon" type="text"
+                           class="form-control bg-light bg-opacity-10 text-white shadow-none border-dark"
+                           placeholder="Промокод" v-model="coupon">
+                    <label for="playerName">Промокод</label>
+                  </div>
+                </div>
+              </div>
+
+
               <div class="form-floating mb-3">
-                <input id="playerName" type="text"
+                <input id="email" type="text"
                        class="form-control bg-light bg-opacity-10 text-white shadow-none border-dark"
-                       placeholder="Введите ваш ник на сервере" v-model="player">
-                <label for="playerName">Введите ваш ник на сервере</label>
+                       placeholder="Ваш email (если нужен чек)" v-model="email">
+                <label for="playerName">Ваш email (если нужен чек)</label>
               </div>
 
               <p class="mb-0 small text-center">Проверьте правильность ввода никнейма в игре и ознакомьтесь с <a href="/shop/rules" class="text-info">правилами
@@ -74,6 +95,8 @@ import { shop } from '@app/js/api/api.js'
 let modalBs = {}
 const cart = useCartStore()
 const player = ref('')
+const coupon = ref('')
+const email = ref('')
 const sending = ref(false)
 const error = ref('')
 
@@ -93,6 +116,8 @@ function purchase () {
 
   shop.order({
     player: player.value,
+    coupon: coupon.value,
+    email: email.value,
     items,
   }).then(res => {
     window.location.href = res.data.link
