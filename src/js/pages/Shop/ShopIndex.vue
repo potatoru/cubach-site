@@ -29,7 +29,7 @@
 
     <template v-for="category in stock" :key="category.id">
       <!--Plus category view-->
-      <template v-if="category.id === 1">
+      <template v-if="category.id === 72960">
         <div class="card text-bg-dark shadow-sm border-0 mb-3">
           <div class="row g-0">
             <div class="col-md-8">
