@@ -23,7 +23,7 @@
       <h2 class="white-and-shadow mb-0 d-none d-sm-block">Кубач.Шоп</h2>
       <button class="ms-sm-auto ms-0 btn btn-dark" @click="openRules()">Правила покупки</button>
       <button class="ms-3 btn" @click="openCart()" :class="{'btn-primary': cartStore.count > 0, 'btn-dark': cartStore.count <= 0}">
-        <i class="bi bi-cart4 me-1" /> Корзина<span class="badge text-bg-light ms-2" v-if="cartStore.count > 0" v-html="cartStore.count" />
+        <i class="bi bi-cart4 me-1" /> Корзина<span class="badge text-bg-light ms-2" v-if="cartStore.count > 0">{{ cartStore.count }}</span>
       </button>
     </div>
 
@@ -48,7 +48,7 @@
         </div>
 
         <div class="row row-cols-1 row-cols-md-3 g-3 mb-3">
-          <div class="col" v-for="item in category.items">
+          <div class="col" v-for="item in category.items" :key="item.id">
             <div class="card text-bg-dark text-center shadow-sm border-0" @mouseenter="hovered = item.id" @mouseleave="hovered = 0">
               <div class="card-body p-3">
                 <p class="mb-3">{{ item.subtitle }}</p>
@@ -62,13 +62,13 @@
       </template>
 
       <template v-else>
-        <h3 class="h3 py-0 text-white text-center rounded-2 fw-light py-3 white-and-shadow" v-html="category.name"/>
+        <h3 class="h3 py-0 text-white text-center rounded-2 fw-light py-3 white-and-shadow">{{ category.name }}</h3>
 
         <!-- Promo category -->
-        <shop-item-promo :item="item" @click="select" v-for="item in category.items" v-if="category.is_promo"></shop-item-promo>
+<!--        <shop-item-promo :item="item" @click="select" v-for="item in category.items" v-if="category.is_promo"></shop-item-promo>-->
 
-        <div class="row row-cols-1 row-cols-md-3 g-3 mb-3" v-else>
-          <div class="col" v-for="item in category.items">
+        <div class="row row-cols-1 row-cols-md-3 g-3 mb-3">
+          <div class="col" v-for="item in category.items" :key="item.id">
             <shop-item :item="item" @click="select" />
           </div>
         </div>
@@ -83,7 +83,6 @@
 import { nextTick, onMounted, ref } from 'vue'
 import { shop } from '@app/js/api/api'
 import { useRoute } from 'vue-router'
-import ShopItemPromo from '@app/js/components/Shop/ShopItemPromo.vue'
 import { useCartStore } from '@app/js/stores/cart.js'
 import { Toast } from 'bootstrap'
 

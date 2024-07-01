@@ -14,8 +14,8 @@
             <template v-else>
               <table class="table table-dark table-sm">
                 <tbody>
-                  <tr v-for="item in cart.items">
-                    <td class="small align-middle border-0" v-html="item.name" />
+                  <tr v-for="item in cart.items" :key="item.id">
+                    <td class="small align-middle border-0">{{ item.name }}</td>
                     <td class="small text-end align-middle border-0" style="width: 125px">
                       <div class="d-inline-block me-2">x{{ item.amount }}</div>
                       <div class="btn-group" role="group">
@@ -23,7 +23,7 @@
                         <button type="button" class="btn btn-sm btn-dark" @click="cart.append(item, -1)"><i class="bi bi-dash"/></button>
                       </div>
                     </td>
-                    <td class="small text-end align-middle border-0" style="width: 85px" v-html="(item.amount * item.price) + '₽'" />
+                    <td class="small text-end align-middle border-0" style="width: 85px">{{ item.amount * item.price }}₽</td>
                   </tr>
                 </tbody>
 
@@ -67,7 +67,9 @@
               <p class="mb-0 small text-center">Проверьте правильность ввода никнейма в игре и ознакомьтесь с <a href="/shop/rules" class="text-info">правилами
                 покупки</a>.</p>
 
-              <div class="alert alert-danger p-2 mt-3 mb-0" v-if="error" v-html="error"/>
+              <div class="alert alert-danger p-2 mt-3 mb-0" v-if="error">
+                {{ error }}
+              </div>
 
             </template>
           </div>
@@ -138,7 +140,7 @@ onMounted(() => {
   })
 })
 
-function show (showItem) {
+function show () {
   modalBs.show()
 }
 

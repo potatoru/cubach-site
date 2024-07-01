@@ -15,8 +15,12 @@
           <a class="nav-link text-white d-flex justify-content-center" href="https://map.cubach.com">Карта</a>
           <a class="nav-link text-white d-flex justify-content-center" href="https://cubach.com/discord" target="_blank">Наш Discord</a>
 
-          <router-link to="/banlist" tag="a" class="nav-link text-white d-flex justify-content-center" active-class="active">Бан-лист</router-link>
-          <router-link to="/shop" tag="a" class="nav-link text-white d-flex justify-content-center" active-class="active">Кубач.Шоп</router-link>
+          <router-link to="/banlist" custom v-slot="{ href, isActive }">
+            <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center">Бан-лист</a>
+          </router-link>
+          <router-link to="/shop" custom v-slot="{ href, isActive }">
+            <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center">Кубач.Шоп</a>
+          </router-link>
         </div>
       </nav>
   </div>
@@ -26,3 +30,5 @@
     <router-view></router-view>
   </div>
 </template>
+<script setup lang="ts">
+</script>

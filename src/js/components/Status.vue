@@ -35,7 +35,7 @@ function update () {
   fetch('https://api.minetools.eu/ping/play.cubach.com/25565').then(r => r.json()).then(s => {
     online.value = true
     players.value = s.players.online
-  }).catch(err => {
+  }).catch(() => {
     online.value = false
   }).finally(() => {
     loaded.value = true

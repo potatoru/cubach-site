@@ -15,7 +15,7 @@
                  :class="{'visually-hidden': !hovered && item.image2}"/>
           </div>
 
-          <p class="mb-0 font-monospace text-center" v-if="item.description" v-html="item.description"/>
+          <p class="mb-0 font-monospace text-center" v-if="item.description" v-html="item.description" />
         </div>
 
         <div class="modal-footer border-0 pt-2">

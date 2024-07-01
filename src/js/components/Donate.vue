@@ -1,7 +1,9 @@
 <template>
   <div class="card mb-5 bg-dark bg-opacity-75">
 
-    <div class="alert alert-danger text-center" v-html="error" v-if="error" />
+    <div class="alert alert-danger text-center" v-if="error">
+      {{ error }}
+    </div>
 
     <div class="row gx-0">
       <div class="col-6">
