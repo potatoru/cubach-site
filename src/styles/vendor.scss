@@ -5,7 +5,7 @@ $font-family-sans-serif: 'Nunito', sans-serif;
 $theme-colors: (
         "primary":    $blue-400,
         "secondary":  $gray-400,
-        "success":    $green-400,
+        "success":    $green-500,
         "info":       $indigo-400,
         "warning":    $orange-400,
         "danger":     $red-400,
@@ -13,9 +13,10 @@ $theme-colors: (
         "dark":       $dark
 );
 
-$min-contrast-ratio:  1.85;
+$min-contrast-ratio:  1.9;
 
 $modal-md: 400px;
+$modal-lg: 600px;
 
 @import "bootstrap/scss/bootstrap-grid";
 @import "bootstrap/scss/bootstrap-utilities";
@@ -39,7 +40,6 @@ $modal-md: 400px;
 @import "bootstrap/scss/toasts";
 @import "bootstrap/scss/tooltip";
 
-
 $bootstrap-icons-font-dir: "@app/public/fonts/bootstrap-icons";
 @import "bootstrap-icons/font/bootstrap-icons";
 
@@ -47,3 +47,10 @@ $bootstrap-icons-font-dir: "@app/public/fonts/bootstrap-icons";
   margin-right: 0.25rem;
 }
 
+.bi.small {
+  vertical-align: -0.2em;
+}
+
+.bi-plus:before {
+  vertical-align: -0.175em;
+}

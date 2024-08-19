@@ -23,7 +23,6 @@
             <button type="button" class="btn btn-dark bg-white bg-opacity-10" data-bs-dismiss="modal"><i class="bi bi-x-lg me-1 d-none d-sm-inline" />Закрыть
             </button>
 
-
             <button type="button" class="btn btn-success ms-auto" @click="addToCart">
               <i class="bi bi-plus-square me-1 d-none d-sm-inline" /> Купить за {{ item.price }}₽
             </button>

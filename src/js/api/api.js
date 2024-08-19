@@ -12,3 +12,7 @@ export const shop = {
 export const banlist = {
   get: (page) => Repository.get(`/banlist/${page}`),
 }
+
+export const shops = {
+  get: (params) => Repository.get(`/shops`, { params }),
+}

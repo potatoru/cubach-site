@@ -6,7 +6,7 @@
 
   <div class="py-3" />
 
-  <div class="p-4 bg-dark bg-opacity-75 rounded-3 white-and-shadow">
+  <div class="p-4 bg-dark bg-opacity-75 rounded-3 white-and-shadow col-xxl-11 mx-auto">
     <div class="row mb-4">
       <div class="col-2 mb-2 mb-sm-0 align-self-center">
         <img src="/img/icons/bee.png" class="img-fluid" />
@@ -23,7 +23,7 @@
       </div>
       <div class="col-sm col-12">
         <h4>Возможности</h4>
-        <p class="mb-0">Защита территории приватом, экономика, работа и магазины, кланы,  кастомные вещи с уникальным крафтом, мобы и боссы и многое другое! Со всеми возможностями вы можете ознакомиться на <a href="https://wiki.cubach.com/" class="text-white" target="_blank">нашей Вики</a>.</p>
+        <p class="mb-0">Защита территории приватом, экономика, работа и магазины, кланы,  кастомные вещи с уникальным крафтом и многое другое! Со всеми возможностями вы можете ознакомиться на <a href="https://wiki.cubach.com/" class="text-white" target="_blank">нашей Вики</a>.</p>
       </div>
     </div>
 
@@ -64,6 +64,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-</script>

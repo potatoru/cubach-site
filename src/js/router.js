@@ -3,7 +3,8 @@ import Index from '@app/js/pages/Index.vue'
 import Shop from '@app/js/pages/Shop/Shop.vue'
 import ShopIndex from '@app/js/pages/Shop/ShopIndex.vue'
 import ShopResult from '@app/js/pages/Shop/ShopResult.vue'
-import Banlist from '@app/js/pages/Banlist.vue'
+import BanList from '@app/js/pages/Game/BanList/BanList.vue'
+import ShopList from '@app/js/pages/Game/ShopList/ShopList.vue'
 
 const routes = [
   {
@@ -24,8 +25,11 @@ const routes = [
     ],
   },
   {
-    path: '/banlist',
-    component: Banlist
+    path: '/game',
+    children: [
+      { path: 'shops', component: ShopList, meta: { title: 'Магазины' } },
+      { path: 'bans', component: BanList, meta: { title: 'Бан-лист' } }
+    ],
   },
   {
     path: '/',

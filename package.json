@@ -23,6 +23,7 @@
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.8.3",
     "cross-env": "^7.0.3",
+    "debounce": "^2.1.0",
     "feather-icons": "^4.29.0",
     "pinia": "^2.1.7",
     "postcss": "^8.4.38",

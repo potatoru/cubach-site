@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 body {
   background: url("/img/bg2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -6,20 +10,20 @@ body {
   background-size: cover;
 }
 
-body:after{
-  content:"";
-  position:fixed; /* stretch a fixed position to the whole screen */
-  top:0;
-  height:100vh; /* fix for mobile browser address bar appearing disappearing */
-  left:0;
-  right:0;
-  z-index:-1; /* needed to keep in the background */
-  background: url("/img/bg2.jpg") center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+//body:after{
+//  content:"";
+//  position:fixed; /* stretch a fixed position to the whole screen */
+//  top:0;
+//  height:100vh; /* fix for mobile browser address bar appearing disappearing */
+//  left:0;
+//  right:0;
+//  z-index:-1; /* needed to keep in the background */
+//  background: url("/img/bg2.jpg") center center;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+//}
 
 mark {
   background-color: #e3fce3;
@@ -39,11 +43,15 @@ textarea {
     &:after {
       content: '';
       position: absolute;
-      width: 3rem;
+      width: 5rem;
       border-bottom: 2px #ffffff solid;
       display: block;
       bottom: 0.75rem;
     }
+  }
+
+  a {
+    line-height: 1;
   }
 }
 
@@ -69,6 +77,27 @@ textarea {
      background-color: #e36161;
      box-shadow: #b64646 0 0 4px;
    }
+}
+
+.shop-list {
+  th:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .show-more {
+    cursor: pointer;
+  }
+
+  tr:hover {
+    .bg-success {
+
+    }
+
+    a {
+      text-decoration: underline !important;
+    }
+  }
 }
 
 @media (max-width: 575.98px) {

@@ -5,7 +5,7 @@
     <div class="card-body p-3 d-flex align-items-start flex-column">
       <h5 class="card-title fw-light w-100">{{ item.name }}</h5>
       <p class="card-text small mb-auto w-100">{{ item.subtitle }}</p>
-      <button @click="clicked" class="btn stretched-link text-white btn-lg p-1 w-100 btn-outline-success mt-3">{{ item.price }} ₽</button>
+      <button @click="clicked" class="btn stretched-link text-white p-1 w-100 btn-outline-success mt-3">{{ item.price }} ₽</button>
     </div>
   </div>
 </template>

@@ -36,7 +36,7 @@
               <div class="card-body text-center">
                 <h4 class="card-title fw-light text-uppercase">
                   <i class="bi bi-plus-square text-success"/> Кубач.Плюс</h4>
-                <p class="card-text">Кубач.Плюс &mdash; это наша основная привилегия. Она даёт визуальные плюшки и некоторые незначительные улучшения геймплея. Подробнее вы можете ознакомиться с ней
+                  <p class="card-text">Кубач.Плюс &mdash; это наша основная привилегия. Она даёт визуальные плюшки и некоторые незначительные улучшения геймплея. Подробнее вы можете ознакомиться с ней
                   <a class="text-white" href="https://wiki.cubach.com/server/cubach.plus" target="_blank">здесь</a>.
                 </p>
               </div>
@@ -47,12 +47,12 @@
           </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-3 mb-3">
+        <div class="row row-cols-1 row-cols-md-3 g-3 mb-3 mx-auto">
           <div class="col" v-for="item in category.items" :key="item.id">
             <div class="card text-bg-dark text-center shadow-sm border-0" @mouseenter="hovered = item.id" @mouseleave="hovered = 0">
               <div class="card-body p-3">
                 <p class="mb-3">{{ item.subtitle }}</p>
-                <button @click="select(item)" class="btn stretched-link text-white btn-lg p-1 w-100 btn-outline-success">
+                <button @click="select(item)" class="btn stretched-link text-white p-1 w-100 btn-outline-success">
                   {{ item.price }} ₽
                 </button>
               </div>
@@ -67,7 +67,7 @@
         <!-- Promo category -->
 <!--        <shop-item-promo :item="item" @click="select" v-for="item in category.items" v-if="category.is_promo"></shop-item-promo>-->
 
-        <div class="row row-cols-1 row-cols-md-3 g-3 mb-3">
+        <div class="row row-cols-1 row-cols-md-3 g-3 mb-3 mx-auto">
           <div class="col" v-for="item in category.items" :key="item.id">
             <shop-item :item="item" @click="select" />
           </div>
