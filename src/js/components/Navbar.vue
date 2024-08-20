@@ -6,37 +6,37 @@
       <status />
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" />
       </button>
 
-      <nav class="collapse navbar-collapse menu-links" id="navMenu">
+      <nav id="navMenu" class="collapse navbar-collapse menu-links">
         <div class="navbar-nav ms-auto">
           <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://wiki.cubach.com" target="_blank">
-            <i class="bi bi-info-square small me-1"/>&nbsp;Кубач.Вики
+            <i class="bi bi-info-square small me-1" />&nbsp;Кубач.Вики
           </a>
           <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://map.cubach.com" target="_blank">
-            <i class="bi bi-globe-americas small me-1"/>&nbsp;Карта
+            <i class="bi bi-globe-americas small me-1" />&nbsp;Карта
           </a>
 
-          <router-link to="/game/shops" custom v-slot="{ href, isActive }">
+          <router-link v-slot="{ href, isActive }" to="/game/shops" custom>
             <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
-              <i class="bi bi-shop-window small me-1"/>&nbsp;Магазины
+              <i class="bi bi-shop-window small me-1" />&nbsp;Магазины
             </a>
           </router-link>
-          <router-link to="/game/bans" custom v-slot="{ href, isActive }">
+          <router-link v-slot="{ href, isActive }" to="/game/bans" custom>
             <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
-              <i class="bi bi-ban small me-1"/>&nbsp;Бан-лист
+              <i class="bi bi-ban small me-1" />&nbsp;Бан-лист
             </a>
           </router-link>
 
-          <router-link to="/shop" custom v-slot="{ href, isActive }">
+          <router-link v-slot="{ href, isActive }" to="/shop" custom>
             <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
-              <i class="bi bi-bag-heart-fill small me-1"/>&nbsp;Кубач.Шоп
+              <i class="bi bi-bag-heart-fill small me-1" />&nbsp;Кубач.Шоп
             </a>
           </router-link>
 
           <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://cubach.com/discord" target="_blank">
-            <i class="bi bi-discord small me-1"/>&nbsp;Discord
+            <i class="bi bi-discord small me-1" />&nbsp;Discord
           </a>
         </div>
       </nav>

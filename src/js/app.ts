@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import { router } from '@app/js/router'
+import { router } from '@app/js/router.ts'
 import { createPinia } from 'pinia'
 
 import App from '@app/js/pages/App.vue'
@@ -9,16 +9,17 @@ import ShopItemPromo from '@app/js/components/Shop/ShopItemPromo.vue'
 import Status from '@app/js/components/Status.vue'
 import CartModal from '@app/js/components/Shop/CartModal.vue'
 import ShopItemModal from '@app/js/components/Shop/ShopItemModal.vue'
-import Navbar from './components/Navbar.vue'
-import Pagination from './components/Table/Pagination.vue'
-import ShopListModal from './pages/Game/ShopList/ShopListModal.vue'
+import Navbar from '@app/js/components/Navbar.vue'
+import ShopListModal from '@app/js/components/ShopList/ShopListModal.vue'
+import TablePaginator from '@app/js/components/Table/TablePaginator.vue'
+import TableSearch from '@app/js/components/Table/TableSearch.vue'
 
 const app = createApp({
   render: () => h(App),
 })
 
 const DEFAULT_TITLE = "Кубач Minecraft";
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   document.title = to.meta.title ? `${to.meta.title} | ${DEFAULT_TITLE} ` : DEFAULT_TITLE;
   next();
 });
@@ -31,7 +32,8 @@ app.use(router)
 app.component('app', App)
 app.component('status', Status)
 app.component('navbar', Navbar)
-app.component('pagination', Pagination)
+app.component('table-paginator', TablePaginator)
+app.component('table-search', TableSearch)
 app.component('item-modal', ShopItemModal)
 app.component('rules-modal', RulesModal)
 app.component('cart-modal', CartModal)

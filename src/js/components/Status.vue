@@ -1,6 +1,6 @@
 <template>
-  <span id="status"
-        v-if="loaded"
+  <span v-if="loaded"
+        id="status"
         class="status-dot d-flex"
         :class="{online: online, offline: !online}"
         data-bs-toggle="tooltip"
@@ -10,7 +10,7 @@
   />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
 import { Tooltip } from 'bootstrap'
 
@@ -26,12 +26,12 @@ const statusTxt = computed(() => {
 })
 
 // https://gist.github.com/realmyst/1262561
-function declOfNum (number, titles) {
+function declOfNum (num: number, titles: string[]): string {
   const cases = [2, 0, 1, 1, 1, 2]
-  return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]]
+  return titles[(num % 100 > 4 && num % 100 < 20) ? 2 : cases[(num % 10 < 5) ? num % 10 : 5]!]!
 }
 
-function update () {
+function update (): void {
   fetch('https://api.minetools.eu/ping/play.cubach.com/25565').then(r => r.json()).then(s => {
     online.value = true
     players.value = s.players.online

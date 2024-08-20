@@ -20,8 +20,8 @@
             <input type="text" class="form-control bg-dark text-white border-secondary border-start-0 shadow-none"
                    placeholder="Сумма" v-model="donate.amount">
 
-            <button class="btn btn-success" @click="sendDonate" :disabled="sending">{{
-                sending
+            <button class="btn btn-success" @click="sendDonate" :disabled="sending">
+              {{ sending
                     ? 'Делаем магию...'
                     : 'Отправить'
               }}

@@ -1,7 +1,7 @@
 <template>
   <div class="card mb-3 text-bg-dark shadow-sm border-1 border-dark" @mouseenter="hovered = true" @mouseleave="hovered = false">
     <div class="position-absolute top-0 end-0">
-      <img src="/img/pushka.png" style="width:100px; position:absolute; left: -91px; top: -9px;" />
+      <img src="/img/pushka.png" style="width:100px; position:absolute; left: -91px; top: -9px;">
     </div>
     <div class="row g-0">
       <div class="col-md-5">
@@ -11,10 +11,14 @@
         <div class="card-body text-center h-100">
           <div class="d-flex align-items-start flex-column h-100">
             <div class="mb-auto w-100 pb-2">
-              <h3 class="card-title fw-light text-uppercase">{{ item.name }}</h3>
-              <p class="card-text">{{ item.subtitle }}</p>
+              <h3 class="card-title fw-light text-uppercase">
+                {{ item.name }}
+              </h3>
+              <p class="card-text">
+                {{ item.subtitle }}
+              </p>
             </div>
-            <button @click="clicked" class="btn stretched-link text-white btn-lg p-1 col-6 mx-auto btn-outline-success">
+            <button class="btn stretched-link text-white btn-lg p-1 col-6 mx-auto btn-outline-success" @click="clicked">
               {{ item.price }} ₽
             </button>
           </div>
@@ -24,18 +28,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import type { TItem } from '@app/js/types.ts'
 
 const emit = defineEmits(['click'])
 const hovered = ref(false)
-const props = defineProps({
-  item: {
-    type: Object,
-  },
-})
+const props = defineProps<{
+  item: TItem
+}>()
 
-function clicked () {
+function clicked (): void {
   emit('click', props.item)
 }
 </script>
