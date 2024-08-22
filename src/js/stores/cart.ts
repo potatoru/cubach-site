@@ -38,8 +38,10 @@ export const useCartStore = defineStore('appearanceStore', {
           this.items[item.id]!!.amount += amount
         }
       } else {
-        this.items[item.id]!!.item = item
-        this.items[item.id]!!.amount = amount
+        this.items[item.id] = {
+          item: item,
+          amount: amount
+        }
       }
     }
   }

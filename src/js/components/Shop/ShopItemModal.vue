@@ -1,7 +1,7 @@
 <template>
   <div id="modal" class="modal fade" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content bg-dark text-white">
+      <div class="modal-content bg-dark text-white" v-if="item !== undefined">
         <div class="modal-header border-0 pb-1">
           <h1 class="modal-title fs-4 mx-auto">
             {{ item!.name }}
