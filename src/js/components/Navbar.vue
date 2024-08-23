@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow p-0">
     <div class="container col-xxl-6">
-      <a class="navbar-brand fw-bold text-white h3 mb-0 text-uppercase py-3 text-decoration-none me-0 me-sm-2" href="/">Кубач</a>
+      <a class="navbar-brand fw-bold text-white h3 mb-0 text-uppercase py-3 text-decoration-none me-0 me-sm-2" href="/">
+        Кубач
+      </a>
 
       <status />
 
@@ -14,26 +16,14 @@
           <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://wiki.cubach.com" target="_blank">
             <i class="bi bi-info-square small me-1" />&nbsp;Кубач.Вики
           </a>
-          <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://map.cubach.com" target="_blank">
-            <i class="bi bi-globe-americas small me-1" />&nbsp;Карта
-          </a>
 
-          <router-link v-slot="{ href, isActive }" to="/game/shops" custom>
-            <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
-              <i class="bi bi-shop-window small me-1" />&nbsp;Магазины
-            </a>
-          </router-link>
-          <router-link v-slot="{ href, isActive }" to="/game/bans" custom>
-            <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
-              <i class="bi bi-ban small me-1" />&nbsp;Бан-лист
-            </a>
-          </router-link>
-
-          <router-link v-slot="{ href, isActive }" to="/shop" custom>
-            <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
-              <i class="bi bi-bag-heart-fill small me-1" />&nbsp;Кубач.Шоп
-            </a>
-          </router-link>
+          <template v-for="link in menuLinks">
+            <router-link v-slot="{ href, isActive }" :to="link.to" custom>
+              <a :href="href" :class="{active: isActive}" class="nav-link text-white d-flex justify-content-center align-self-center">
+                <i class="bi small me-1" :class="link.icon" />&nbsp;{{ link.name }}
+              </a>
+            </router-link>
+          </template>
 
           <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://cubach.com/discord" target="_blank">
             <i class="bi bi-discord small me-1" />&nbsp;Discord
@@ -44,4 +34,26 @@
   </nav>
 </template>
 <script setup lang="ts">
+const menuLinks = [
+  {
+    to: '/map',
+    icon: 'bi-globe-americas',
+    name: 'Карта'
+  },
+  {
+    to: '/game/shops',
+    icon: 'bi-shop-window',
+    name: 'Магазины'
+  },
+  {
+    to: '/game/bans',
+    icon: 'bi-ban',
+    name: 'Бан-лист'
+  },
+  {
+    to: '/shops',
+    icon: 'bi-bag-heart-fill',
+    name: 'Кубач.Шоп'
+  }
+]
 </script>
