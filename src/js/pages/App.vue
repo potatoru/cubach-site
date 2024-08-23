@@ -1,7 +1,7 @@
 <template>
   <navbar />
 
-  <div class="container col-xxl-6 mb-5">
+  <div :class="{'my-5': !isMap, 'container': !isMap, 'col-xxl-6': !isMap, 'vh-100': isMap}">
     <router-view />
   </div>
 
@@ -13,3 +13,11 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+  import { computed } from 'vue'
+  import { useRoute } from 'vue-router'
+
+  const route = useRoute()
+  const isMap = computed(() => route.path === '/map')
+</script>

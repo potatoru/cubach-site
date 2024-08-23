@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow p-0 mb-5">
+  <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow p-0">
     <div class="container col-xxl-6">
       <a class="navbar-brand fw-bold text-white h3 mb-0 text-uppercase py-3 text-decoration-none me-0 me-sm-2" href="/">Кубач</a>
 
