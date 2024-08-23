@@ -51,7 +51,7 @@ const menuLinks = [
     name: 'Бан-лист'
   },
   {
-    to: '/shops',
+    to: '/shop',
     icon: 'bi-bag-heart-fill',
     name: 'Кубач.Шоп'
   }
