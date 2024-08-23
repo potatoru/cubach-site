@@ -19,6 +19,7 @@ const routes = [
   {
     path: '/map',
     component: MapIndex,
+    meta: { title: 'Карта сервера' }
   },
   {
     path: '/shop',
