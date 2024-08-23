@@ -1,11 +1,13 @@
 <template>
-  <navbar />
+    <navbar />
+    <div :class="{'my-5': !isMap, 'container': !isMap, 'col-xxl-6': !isMap, 'd-flex': isMap, 'flex-fill': isMap}">
+      <router-view />
+    </div>
 
-  <div :class="{'my-5': !isMap, 'container': !isMap, 'col-xxl-6': !isMap, 'vh-100': isMap}">
-    <router-view />
-  </div>
 
-  <div class="mt-auto bg-dark shadow">
+
+
+  <div class="mt-auto bg-dark shadow" v-if="!isMap">
     <div class="container col-xxl-6 text-center">
       <div class="px-4 py-2 small" style="color: #aaaaaa">
         Кубач Minecraft 2012 &mdash; 2024
@@ -21,3 +23,6 @@
   const route = useRoute()
   const isMap = computed(() => route.path === '/map')
 </script>
+
+<style>
+</style>
