@@ -10,9 +10,10 @@ import Status from '@app/js/components/Status.vue'
 import CartModal from '@app/js/components/Shop/CartModal.vue'
 import ShopItemModal from '@app/js/components/Shop/ShopItemModal.vue'
 import Navbar from '@app/js/components/Navbar.vue'
-import ShopListModal from '@app/js/components/ShopList/ShopListModal.vue'
+import ShopListHelpModal from '@app/js/components/ShopList/ShopListHelpModal.vue'
 import TablePaginator from '@app/js/components/Table/TablePaginator.vue'
 import TableSearch from '@app/js/components/Table/TableSearch.vue'
+import ShopListLogsModal from '@app/js/components/ShopList/ShopListLogsModal.vue'
 
 const app = createApp({
   render: () => h(App),
@@ -38,6 +39,7 @@ app.component('item-modal', ShopItemModal)
 app.component('rules-modal', RulesModal)
 app.component('cart-modal', CartModal)
 app.component('shop-item', ShopItem)
-app.component('shop-list-modal', ShopListModal)
+app.component('shop-list-help-modal', ShopListHelpModal)
+app.component('shop-list-logs-modal', ShopListLogsModal)
 app.component('shop-item-promo', ShopItemPromo)
 app.mount('body')

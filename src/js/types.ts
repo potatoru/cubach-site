@@ -41,6 +41,20 @@ export interface TShopResponse {
   last_page: number
 }
 
+export interface TShopLog {
+  id: number,
+  shop_id: number,
+  buyer: string,
+  type: number,
+  amount: number,
+  money: number,
+  created_at: number
+}
+
+export interface TShopLogsResponse {
+  logs: TShopLog[]
+}
+
 export interface TShop {
   id: number,
   display_name: string,

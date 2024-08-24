@@ -3,7 +3,8 @@
     Магазины сервера
   </h2>
 
-  <shop-list-modal ref="helpModal" />
+  <shop-list-help-modal ref="helpModal" />
+  <shop-list-logs-modal ref="logsModal" />
 
   <div class="row gx-2">
     <div class="col-6 col-md-4 mb-2">
@@ -83,15 +84,18 @@
             <td v-else class="bg-success text-center align-middle">
               <i class="bi bi-arrow-left-square" />
             </td>
-            <td class="align-middle" :class="{'show-more': shop.lore.length > 0 || shop.enchantments.length > 0}" @click="openRow(shop)">
+            <td class="align-middle" :class="{'show-more': shop.lore.length > 0 || shop.enchantments.length > 0}">
               <div class="hstack gap-3 w-100">
-                <div>
+                <div @click="openRow(shop)">
                   <span v-html="shop.display_name" />
                   <i v-if="shop.lore.length > 0 || shop.enchantments.length > 0" class="bi bi-plus" />
                 </div>
-                <div v-if="shop.type === 0" class="ms-auto">
-                  <span class="badge text-bg-secondary">
-                    {{ shop.stock }}
+                <div class="ms-auto">
+                  <span v-if="shop.type === 0" class="badge bg-secondary bg-opacity-25 text-white">
+                    <small>{{ shop.stock }}</small>
+                  </span>
+                  <span class="badge text-bg-primary ms-2 bg-opacity-25 pointer" @click="logsModal!!.show(shop.id)">
+                    <small><i class="bi bi-bar-chart-fill" /></small>
                   </span>
                 </div>
               </div>
@@ -146,11 +150,13 @@
 import { onMounted, reactive, ref, watch } from 'vue'
 import { shops } from '@app/js/api/api'
 import debounce from 'debounce'
-import ShopListModal from '@app/js/components/ShopList/ShopListModal.vue'
 import type { TShop, TShopResponse, TTableQuery } from '@app/js/types.js'
 import TablePaginator from '@app/js/components/Table/TablePaginator.vue'
+import type ShopListHelpModal from '@app/js/components/ShopList/ShopListHelpModal.vue'
+import type ShopListLogsModal from '@app/js/components/ShopList/ShopListLogsModal.vue'
 
-const helpModal = ref<InstanceType<typeof ShopListModal>>()
+const helpModal = ref<InstanceType<typeof ShopListHelpModal>>()
+const logsModal = ref<InstanceType<typeof ShopListLogsModal>>()
 const paginator = ref<InstanceType<typeof TablePaginator>>()
 
 const openedRows = ref<number[]>([])

@@ -100,6 +100,10 @@ textarea {
   }
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 @media (max-width: 575.98px) {
   .menu-links {
     .nav-link.active, .nav-link:hover {

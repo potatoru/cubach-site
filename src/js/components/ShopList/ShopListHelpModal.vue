@@ -26,7 +26,11 @@
               <i class="bi bi-arrow-right-square text-primary" /> &mdash; покупает.
             </p>
             <p>
-              Справа указывается остаток товара. Например: <span class="badge text-bg-secondary">14</span>
+              Справа вы можете увидеть количество товара в магазине
+              (<span class="badge bg-secondary bg-opacity-25 text-white">14</span>), а кликнув по кнопке
+              <span class="badge text-bg-primary bg-opacity-25">
+                  <small><i class="bi bi-bar-chart-fill" /></small>
+              </span> посмотреть последние продажи.
             </p>
             <p class="lead">
               Владелец

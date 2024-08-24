@@ -1,5 +1,5 @@
 import Repository from '@app/js/api/axios';
-import type { TOrder, TShopResponse, TTableQuery } from '@app/js/types.ts'
+import type { TOrder, TShopLogsResponse, TShopResponse, TTableQuery } from '@app/js/types.ts'
 import type { AxiosResponse } from 'axios'
 
 /**
@@ -16,4 +16,5 @@ export const bans = {
 
 export const shops = {
   get: (params: TTableQuery):  Promise<AxiosResponse<TShopResponse>> => Repository.get(`/shops`, { params }),
+  logs: (shopId: number):  Promise<AxiosResponse<TShopLogsResponse>> => Repository.get(`/shops/${shopId}/logs`),
 }
