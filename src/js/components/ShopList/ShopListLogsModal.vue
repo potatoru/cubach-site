@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                   <td colspan="3" class="align-middle text-end">Итого</td>
-                  <td class="align-middle text-end">{{ count }} ₵</td>
+                  <td class="align-middle text-end">{{ count }}</td>
                   <td class="align-middle text-end">{{ sum }} ₵</td>
                 </tr>
                 </tbody>
