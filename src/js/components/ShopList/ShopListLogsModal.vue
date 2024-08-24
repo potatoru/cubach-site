@@ -38,10 +38,14 @@
                   <td v-else class="bg-success text-center align-middle">
                     <i class="bi bi-arrow-left-square" />
                   </td>
-                  <td>{{ fmt(log.created_at) }}</td>
-                  <td>{{ log.buyer }}</td>
-                  <td class="text-end">{{ log.amount }}</td>
-                  <td class="text-end">{{ log.money }}</td>
+                  <td class="align-middle">{{ fmt(log.created_at) }}</td>
+                  <td class="align-middle">{{ log.buyer }}</td>
+                  <td class="align-middle text-end">{{ log.amount }}</td>
+                  <td class="align-middle text-end">{{ log.money }}</td>
+                </tr>
+                <tr>
+                  <td colspan="4" class="align-middle text-end">Сумма</td>
+                  <td class="align-middle text-end">{{ sum }} ₵</td>
                 </tr>
                 </tbody>
               </table>
@@ -65,7 +69,7 @@
 
 <script setup lang="ts">
 import { Modal } from 'bootstrap'
-import { nextTick, onMounted, reactive, ref } from 'vue'
+import { computed, nextTick, onMounted, reactive, ref } from 'vue'
 import { shops } from '@app/js/api/api.ts'
 import type { TShopLogsResponse } from '@app/js/types.ts'
 let modalBs: Modal
@@ -75,10 +79,17 @@ let data: TShopLogsResponse = reactive({
   logs: []
 })
 
+const sum = computed(() => {
+  if (data.logs.length === 0) {
+    return
+  }
+
+  return data.logs.reduce((total, l) => l.money + total,0)
+})
+
 onMounted(() => {
   nextTick(() => {
     modalBs = new Modal('#shop-list-logs', {
-      backdrop: 'static',
       keyboard: false,
     })
   })
