@@ -44,7 +44,8 @@
                   <td class="align-middle text-end">{{ log.money }}</td>
                 </tr>
                 <tr>
-                  <td colspan="4" class="align-middle text-end">Сумма</td>
+                  <td colspan="3" class="align-middle text-end">Итого</td>
+                  <td class="align-middle text-end">{{ count }} ₵</td>
                   <td class="align-middle text-end">{{ sum }} ₵</td>
                 </tr>
                 </tbody>
@@ -85,6 +86,14 @@ const sum = computed(() => {
   }
 
   return data.logs.reduce((total, l) => l.money + total,0)
+})
+
+const count = computed(() => {
+  if (data.logs.length === 0) {
+    return
+  }
+
+  return data.logs.reduce((total, l) => l.amount + total,0)
 })
 
 onMounted(() => {
