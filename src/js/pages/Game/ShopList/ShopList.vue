@@ -50,7 +50,7 @@
             </template>
           </th>
           <th class="text-end" @click="sortBy('price')">
-            Цена ₵
+            Цена
             <template v-if="params.s === 'price'">
               <i v-if="params.d === 'asc'" class="bi bi-arrow-up-short" />
               <i v-else class="bi bi-arrow-down-short" />
@@ -77,7 +77,7 @@
       </thead>
       <tbody>
         <template v-for="shop in data.shops" :key="shop.id">
-          <tr>
+          <tr class="small">
             <td v-if="shop.type === 1" class="bg-primary text-center align-middle">
               <i class="bi bi-arrow-right-square" />
             </td>
@@ -85,17 +85,15 @@
               <i class="bi bi-arrow-left-square" />
             </td>
             <td class="align-middle" :class="{'show-more': shop.lore.length > 0 || shop.enchantments.length > 0}">
-              <div class="hstack gap-3 w-100">
+              <div class="hstack gap-1 w-100">
                 <div @click="openRow(shop)">
                   <span v-html="shop.display_name" />
                   <i v-if="shop.lore.length > 0 || shop.enchantments.length > 0" class="bi bi-plus" />
                 </div>
                 <div class="ms-auto">
-                  <span v-if="shop.type === 0" class="badge bg-secondary bg-opacity-25 text-white">
-                    <small>{{ shop.stock }}</small>
-                  </span>
-                  <span class="badge text-bg-primary ms-2 bg-opacity-25 pointer" @click="logsModal!!.show(shop.id)">
-                    <small><i class="bi bi-bar-chart-fill" /></small>
+                  <span class="badge text-bg-primary ms-1 bg-opacity-25 pointer" @click="logsModal!!.show(shop)">
+                    <span class="me-1" v-if="shop.type === 0">{{ shop.stock }}</span>
+                    <i class="bi bi-bar-chart-fill" />
                   </span>
                 </div>
               </div>
@@ -110,7 +108,7 @@
               </a>
             </td>
             <td class="align-middle text-center">
-              <span class="small text-nowrap">
+              <span class="text-nowrap">
                 <a :href="`https://map.cubach.com/#world;flat;${shop.x},${shop.y},${shop.z};5`" target="_blank"
                    class="text-white text-decoration-none"
                 >
@@ -118,8 +116,8 @@
                 </a>
               </span>
             </td>
-            <td class="align-middle text-center">
-              <small class="text-nowrap">{{ fmt(shop.created_at) }}</small>
+            <td class="align-middle text-center text-nowrap">
+              {{ fmt(shop.created_at) }}
             </td>
           </tr>
           <tr v-if="openedRows.includes(shop.id)">
@@ -194,7 +192,7 @@ function fmtMoney(money: number): string {
   return (new Intl.NumberFormat('ru-RU', {
     style: 'currency',
     currency: 'GHS',
-  })).format(money).replace('GHS', '');
+  })).format(money).replace('GHS', '₵');
 }
 
 function sortBy(field: string): void {

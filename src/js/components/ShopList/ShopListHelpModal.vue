@@ -27,10 +27,9 @@
             </p>
             <p>
               Справа вы можете увидеть количество товара в магазине
-              (<span class="badge bg-secondary bg-opacity-25 text-white">14</span>), а кликнув по кнопке
-              <span class="badge text-bg-primary bg-opacity-25">
-                  <small><i class="bi bi-bar-chart-fill" /></small>
-              </span> посмотреть последние продажи.
+              (<span class="badge text-bg-primary bg-opacity-25">
+                  10 <small><i class="bi bi-bar-chart-fill ms-1" /></small>
+              </span>) и посмотреть последние продажи, если кликнуть по нему.
             </p>
             <p class="lead">
               Владелец

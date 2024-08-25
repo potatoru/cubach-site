@@ -38,23 +38,6 @@ textarea {
   resize: none;
 }
 
-.menu-links {
-  .nav-link.active, .nav-link:hover {
-    &:after {
-      content: '';
-      position: absolute;
-      width: 5rem;
-      border-bottom: 2px #ffffff solid;
-      display: block;
-      bottom: 0.75rem;
-    }
-  }
-
-  a {
-    line-height: 1;
-  }
-}
-
 .status-dot {
   margin-bottom: 3px;
   height: 12px;

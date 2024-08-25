@@ -18,36 +18,36 @@
           <template v-else>
             <template v-if="data.logs.length > 0">
               <p class="text-white mb-2">
-                Последние 25 продаж
+                Последние 25 продаж <span v-html="shopName" /> ({{ owner }})
               </p>
               <table class="table table-dark table-sm table-bordered border-black mb-0 small">
                 <thead>
-                <tr>
-                  <th></th>
-                  <th>Дата</th>
-                  <th>Игрок</th>
-                  <th class="text-end">Кол-во</th>
-                  <th class="text-end">Сумма ₵</th>
-                </tr>
+                  <tr>
+                    <th></th>
+                    <th>Дата</th>
+                    <th>Игрок</th>
+                    <th class="text-end">Кол-во</th>
+                    <th class="text-end">Сумма ₵</th>
+                  </tr>
                 </thead>
                 <tbody>
-                <tr v-for="log in data.logs" :key="log.id">
-                  <td v-if="log.type === 1" class="bg-primary text-center align-middle">
-                    <i class="bi bi-arrow-right-square" />
-                  </td>
-                  <td v-else class="bg-success text-center align-middle">
-                    <i class="bi bi-arrow-left-square" />
-                  </td>
-                  <td class="align-middle">{{ fmt(log.created_at) }}</td>
-                  <td class="align-middle">{{ log.buyer }}</td>
-                  <td class="align-middle text-end">{{ log.amount }}</td>
-                  <td class="align-middle text-end">{{ log.money }}</td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="align-middle text-end">Итого</td>
-                  <td class="align-middle text-end">{{ count }}</td>
-                  <td class="align-middle text-end">{{ sum }} ₵</td>
-                </tr>
+                  <tr v-for="log in data.logs" :key="log.id" class="small">
+                    <td v-if="log.type === 1" class="bg-primary text-center align-middle">
+                      <i class="bi bi-arrow-right-square" />
+                    </td>
+                    <td v-else class="bg-success text-center align-middle">
+                      <i class="bi bi-arrow-left-square" />
+                    </td>
+                    <td class="align-middle">{{ fmt(log.created_at) }}</td>
+                    <td class="align-middle">{{ log.buyer }}</td>
+                    <td class="align-middle text-end">{{ log.amount }}</td>
+                    <td class="align-middle text-end">{{ fmtMoney(log.money) }}</td>
+                  </tr>
+                  <tr class="small">
+                    <td colspan="3" class="align-middle text-end">Итого</td>
+                    <td class="align-middle text-end">{{ count }}</td>
+                    <td class="align-middle text-end">{{ fmtMoney(sum) }} ₵</td>
+                  </tr>
                 </tbody>
               </table>
             </template>
@@ -72,17 +72,19 @@
 import { Modal } from 'bootstrap'
 import { computed, nextTick, onMounted, reactive, ref } from 'vue'
 import { shops } from '@app/js/api/api.ts'
-import type { TShopLogsResponse } from '@app/js/types.ts'
+import type { TShop, TShopLogsResponse } from '@app/js/types.ts'
 let modalBs: Modal
 
-let loading = ref(false)
-let data: TShopLogsResponse = reactive({
+const loading = ref(false)
+const data: TShopLogsResponse = reactive({
   logs: []
 })
+const shopName = ref('')
+const owner = ref('')
 
 const sum = computed(() => {
   if (data.logs.length === 0) {
-    return
+    return 0
   }
 
   return data.logs.reduce((total, l) => l.money + total,0)
@@ -104,10 +106,19 @@ onMounted(() => {
   })
 })
 
-function show (shopId: number): void {
+function fmtMoney(money: number): string {
+  return (new Intl.NumberFormat('ru-RU', {
+    style: 'currency',
+    currency: 'GHS',
+  })).format(money).replace('GHS', '');
+}
+
+function show (shop: TShop): void {
   modalBs!.show()
+  shopName.value = shop.display_name
+  owner.value = shop.owner
   loading.value = true
-  shops.logs(shopId).then(res => {
+  shops.logs(shop.id).then(res => {
     Object.assign(data, res.data)
   }).finally(() => {
     loading.value = false
