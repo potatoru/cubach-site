@@ -74,11 +74,11 @@
               </div>
 
               <div class="form-floating mb-3">
-                <input id="email" v-model="email" type="text"
+                <input id="email" v-model="email" type="email"
                        class="form-control bg-light bg-opacity-10 text-white shadow-none border-dark"
-                       placeholder="Ваш email (если нужен чек)"
+                       placeholder="Ваш email"
                 >
-                <label for="playerName">Ваш email (если нужен чек)</label>
+                <label for="playerName">Ваш email</label>
               </div>
 
               <p class="mb-0 small text-center">
