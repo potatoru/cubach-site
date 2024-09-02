@@ -128,6 +128,11 @@ function purchase (): void {
     return
   }
 
+  if (email.value === '') {
+    error.value = 'Введите ваш E-mail.'
+    return
+  }
+
   error.value = ''
   sending.value = true
   const items = []
