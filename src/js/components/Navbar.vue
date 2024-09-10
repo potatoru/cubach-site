@@ -20,6 +20,11 @@
                 <i class="bi bi-info-square small me-1" />&nbsp;Кубач.Вики
               </a>
             </li>
+            <li class="nav-item py-2 px-1">
+              <a class="nav-link text-white d-flex justify-content-center align-self-center" href="https://map.cubach.com" target="_blank">
+                <i class="bi bi-compass small me-1" />&nbsp;Карта
+              </a>
+            </li>
 
             <template v-for="item in menu" :key="item.name">
               <template v-if="!item.items">
@@ -33,7 +38,7 @@
               </template>
 
               <template v-else>
-                <li class="nav-item dropdown py-2 px-1" :class="{active: isActive}">
+                <li class="nav-item dropdown py-2 px-1">
                   <a class="nav-link text-white d-flex justify-content-center align-self-center" role="button" data-bs-toggle="dropdown">
                     <i class="bi bi-cpu me-1" />&nbsp;{{ item.name }} <small><i class="bi bi-chevron-down small ms-1" /></small>
                   </a>
@@ -67,11 +72,6 @@ const menu = [
     icon: 'cpu',
     name: 'Сервер',
     items: [
-      {
-        to: '/map',
-        icon: 'bi-globe-americas',
-        name: 'Карта'
-      },
       {
         to: '/game/shops',
         icon: 'bi-shop-window',

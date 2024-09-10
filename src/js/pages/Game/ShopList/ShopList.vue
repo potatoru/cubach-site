@@ -84,12 +84,9 @@
             <td v-else class="bg-success text-center align-middle">
               <i class="bi bi-arrow-left-square" />
             </td>
-            <td class="align-middle" :class="{'show-more': shop.lore.length > 0 || shop.enchantments.length > 0}">
+            <td class="align-middle show-more">
               <div class="hstack gap-1 w-100">
-                <div @click="openRow(shop)">
-                  <span v-html="shop.display_name" />
-                  <i v-if="shop.lore.length > 0 || shop.enchantments.length > 0" class="bi bi-plus" />
-                </div>
+                <a role="button" class="btn-link text-white text-decoration-none w-100" v-html="shop.display_name" @click="openRow(shop)" />
                 <div class="ms-auto">
                   <span class="badge text-bg-primary ms-1 bg-opacity-25 pointer" @click="logsModal!!.show(shop)">
                     <span class="me-1" v-if="shop.type === 0">{{ shop.stock }}</span>
@@ -98,7 +95,6 @@
                 </div>
               </div>
             </td>
-
             <td class="align-middle text-end">
               {{ fmtMoney(shop.price) }}
             </td>
@@ -123,11 +119,14 @@
           <tr v-if="openedRows.includes(shop.id)">
             <td colspan="6">
               <div class="row m-0">
-                <div v-if="shop.lore.length > 0" class="col">
+                <div  class="col">
                   <p class="mb-1">
                     Описание
                   </p>
-                  <p v-for="(l, i) in shop.lore" :key="i" class="mb-0 font-monospace small" v-html="l" />
+                  <p class="small mb-1">ID: {{ shop.item_type }}</p>
+                  <template v-if="shop.lore.length > 0">
+                    <p v-for="(l, i) in shop.lore" :key="i" class="mb-0 font-monospace small" v-html="l" />
+                  </template>
                 </div>
                 <div v-if="shop.enchantments.length > 0" class="col">
                   <p class="mb-1">
@@ -210,9 +209,7 @@ function openRow(shop: TShop): void {
   if (openedRows.value.includes(shop.id)) {
     openedRows.value = openedRows.value.filter(r => r !== shop.id);
   } else {
-    if (shop.lore.length > 0 || shop.enchantments.length > 0) {
-      openedRows.value.push(shop.id)
-    }
+    openedRows.value.push(shop.id)
   }
 }
 

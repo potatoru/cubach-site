@@ -31,7 +31,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="log in data.logs" :key="log.id" class="small">
+                  <tr v-for="log in data.logs" :key="log.id">
                     <td v-if="log.type === 1" class="bg-primary text-center align-middle">
                       <i class="bi bi-arrow-right-square" />
                     </td>
