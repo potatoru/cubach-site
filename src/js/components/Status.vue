@@ -32,7 +32,7 @@ function declOfNum (num: number, titles: string[]): string {
 }
 
 function update (): void {
-  fetch('https://api.mcsrvstat.us/3/cubach.ru').then(r => r.json()).then(s => {
+  fetch('https://api.mcsrvstat.us/3/cubach.com').then(r => r.json()).then(s => {
     online.value = true
     players.value = s.players.online
   }).catch(() => {

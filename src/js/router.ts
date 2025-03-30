@@ -5,7 +5,6 @@ import ShopIndex from '@app/js/pages/Shop/ShopIndex.vue'
 import ShopResult from '@app/js/pages/Shop/ShopResult.vue'
 import BanList from '@app/js/pages/Game/BanList/BanList.vue'
 import ShopList from '@app/js/pages/Game/ShopList/ShopList.vue'
-import MapIndex from '@app/js/pages/Map/MapIndex.vue'
 
 const routes = [
   {
@@ -18,8 +17,7 @@ const routes = [
   },
   {
     path: '/map',
-    component: MapIndex,
-    meta: { title: 'Карта сервера' }
+    redirect: 'https://map.cubach.com'
   },
   {
     path: '/shop',
