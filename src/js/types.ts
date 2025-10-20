@@ -57,7 +57,7 @@ export interface TShopLogsResponse {
 
 export interface TShop {
   id: number,
-  item_type: string,
+  item_id: string,
   display_name: string,
   lore: string[],
   enchantments: string[],

@@ -123,7 +123,7 @@
                   <p class="mb-1">
                     Описание
                   </p>
-                  <p class="small mb-1">ID: {{ shop.item_type }}</p>
+                  <p class="small mb-1">ID: {{ shop.item_id }}</p>
                   <template v-if="shop.lore.length > 0">
                     <p v-for="(l, i) in shop.lore" :key="i" class="mb-0 font-monospace small" v-html="l" />
                   </template>
